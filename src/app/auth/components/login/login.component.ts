@@ -33,4 +33,12 @@ export class LoginComponent {
       console.error(error);
     }
   }
+
+  navigateToResetPassword() {
+    this.router.navigate(['/resetPassword']);
+  }
+
+  navigateToRegister() {
+    this.router.navigate(['/register']);
+  }
 }

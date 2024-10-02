@@ -1,0 +1,19 @@
+.container-detail {
+  padding: 17rem 10rem 5rem 10rem;
+}
+
+.detail-movie {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.txt-movie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+

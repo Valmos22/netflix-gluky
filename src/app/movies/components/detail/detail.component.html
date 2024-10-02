@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<div class="container mx-auto p-4 container-detail">
+  <div *ngIf="movie" class="text-center md:text-left">
+
+    <!-- <div class="mb-8">
+      <iframe
+        [src]="movie.url"
+        class="w-full h-64 md:h-96 rounded-lg shadow-md"
+      ></iframe>
+    </div> -->
+
+    <h1 class="text-3xl font-bold mb-4">{{ movie.nombre }}</h1>
+
+    <div class="text-center md:text-left detail-movie">
+      <img
+        [src]="movie.portada"
+        alt="{{ movie.nombre }}"
+        class="w-4/12 h-auto rounded-lg shadow-md mb-4"
+      />
+      <div class="txt-movie">
+        <p class="text-lg mb-4">{{ movie.sinopsis }}</p>
+        <p class="text-md font-semibold">Categoría: {{ movie.categoria }}</p>
+        <a
+          [href]="movie.url"
+          target="_blank"
+          class="text-blue-500 underline mt-4 block"
+          >Ver Película</a
+        >
+      </div>
+    </div>
+
+  </div>
+  <div *ngIf="!movie" class="text-center">
+    <p>Cargando detalles de la película...</p>
+  </div>
+</div>

@@ -1,4 +1,5 @@
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { authGuard } from './auth/guards/auth.guard';
 
 export const routes: Routes = [
@@ -19,5 +20,16 @@ export const routes: Routes = [
     loadComponent: ()=> import('./movies/components/movies/movies.component').then(m=> m.MoviesComponent),
     canActivate: [authGuard]
   },
+  {
+    path: 'detail/:id',
+    loadComponent: ()=> import('./movies/components/detail/detail.component').then(m=> m.DetailComponent),
+    canActivate: [authGuard]
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

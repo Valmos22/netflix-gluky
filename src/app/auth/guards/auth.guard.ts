@@ -11,6 +11,7 @@ export class authGuard implements CanActivate {
   canActivate(): Promise<boolean> {
     return new Promise((resolve) => {
       this.authService.getAuthState().subscribe(user => {
+        console.log(user)
         if (user) {
           resolve(true);
         } else {

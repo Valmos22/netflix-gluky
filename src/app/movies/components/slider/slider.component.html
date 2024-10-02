@@ -1,0 +1,32 @@
+<div class="space-y-8 text-white">
+  <div *ngFor="let category of categories">
+    <h2 class="text-2xl font-bold mb-4">{{ category }}</h2>
+    <div class="relative">
+      <div class="flex space-x-4 snap-x snap-mandatory slider-movie">
+        <div
+          *ngFor="let movie of movies[category]"
+          class="min-w-[200px] snap-start"
+        >
+          <img
+            [src]="movie.portada"
+            alt="{{ movie.nombre }}"
+            class="w-full h-auto rounded-lg shadow-md card-movie"
+            (click)="navigateToDetail(movie.id)"
+          />
+        </div>
+      </div>
+      <button
+        class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+        (click)="scrollLeft(category)"
+      >
+        &#10094;
+      </button>
+      <button
+        class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+        (click)="scrollRight(category)"
+      >
+        &#10095;
+      </button>
+    </div>
+  </div>
+</div>

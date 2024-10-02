@@ -1,1 +1,45 @@
-<p>register works!</p>
+<div
+  class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat"
+  style="background-image: url('/public/static/fondo.png')"
+>
+  <div
+    class="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8 text-white"
+  >
+    <div class="mb-8 flex flex-col items-center">
+      <h2 class="mb-2 text-2xl font-bold">Register</h2>
+    </div>
+    <form (ngSubmit)="register()">
+      <label for="email">Email:</label>
+      <div class="mb-4 text-lg">
+        <input
+          class="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          placeholder="Correo"
+          required
+        />
+      </div>
+      <label for="password">Password:</label>
+      <div class="mb-4 text-lg">
+        <input
+          class="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Contrasena"
+          required
+        />
+      </div>
+      <button
+        class="rounded-3xl bg-black bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-white hover:text-black"
+        type="submit"
+      >
+        Register
+      </button>
+    </form>
+    <div class="mt-8 flex flex-col justify-center text-lg text-white">
+      <a class="text-sm" (click)="returnLogin()">Volver al login</a>
+    </div>
+  </div>
+</div>

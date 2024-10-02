@@ -1,0 +1,15 @@
+.card-movie:hover {
+  transform: scale(.9);
+}
+
+.card-movie {
+  transition: transform 0.2s;
+}
+.card-movie:hover {
+  transform: scale(1.05);
+}
+
+.slider-movie {
+  display: flex !important;
+  justify-content: center;
+}
