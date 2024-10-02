@@ -1,27 +1,29 @@
 # NetflixGluky
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
+Este proyecto esta generado con [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
 
-## Development server
+## Descripción
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Este proyecto es una aplicacion de peliculas estilo Netflix creada con Angular version 18.2.6. Esta aplicacion esta conectada con Firebase Identity Toolkit, el cual lo usa como base dedatos para gestionar autenticacion de usuario y gestion de peliculas.
 
-## Code scaffolding
+Nota: Actualmente solo hay 3 peliculas en la base de datos (No me tuve mucho tiempo para alimentar la base de datos sin embargo en el trancurso del tiempo estare subiendo mas contenido).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Características
 
-## Build
+- Catálogo de productos
+- Autenticacion (email, contraseña)
+- Autenticacion con google
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Requisitos Previos
 
-## Running unit tests
+- Node.js (v14 o superior)
+- npm
+- Angular v18
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Instalación local
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Clona el repositorio
+- Navega a la carpeta netflix-gluky e instala las dependencias con npm install
+- Asegurate de que la configuracion de Firebase sea la correcta (esta configuracion actual la puedes usar sin problemas)
+- La configuracion de firebase la encuentras en el archivo src/environments/environment.ts
+- Inicia la aplicación: ng serve
