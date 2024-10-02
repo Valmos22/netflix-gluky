@@ -13,11 +13,17 @@ import { Router } from '@angular/router';
 })
 export class SliderComponent implements OnInit {
 
+  /**
+   * Utiliza un array de categorias que hacen match con la de la coleccion.
+   */
   categories = ['terror', 'drama', 'accion'];
   movies: { [key: string]: any[] } = {};
 
   constructor(private movieService: MovieService, private router: Router) { }
 
+  /**
+   * Maneja el evento de busqueda de peliculas por categoria utilizando el servicio MovieService.
+   */
   ngOnInit() {
     this.categories.forEach(category => {
       this.movieService.getMoviesByCategory(category).subscribe(movies => {
@@ -40,6 +46,9 @@ export class SliderComponent implements OnInit {
     }
   }
 
+    /**
+   * Redirige a la pagina de detalles de la pelicula.
+   */
   navigateToDetail(movieId: string ) {
     this.router.navigate(['/detail', movieId]);
   }

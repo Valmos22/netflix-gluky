@@ -12,13 +12,19 @@ import { FormsModule } from '@angular/forms';
 })
 export class ResetPasswordComponent {
 
+  /**
+   * Dirección de correo electrónico ingresada por el usuario.
+   */
   email: string = "";
   successMessage: string = '';
   errorMessage: string = '';
 
   constructor( private authService: AuthService, private router: Router){}
 
-
+  /**
+   * Maneja el evento de recuperar contraseña utilizando el servicio AuthService.
+   * Muestra un mensaje el envio del email es exitoso.
+   */
   resetPassword(){
     this.authService.resetPassword(this.email)
     .then(result => {
@@ -30,6 +36,9 @@ export class ResetPasswordComponent {
     });
   }
 
+  /**
+   * Redirige a la pagina del login.
+   */
   returnLogin(){
     this.router.navigate(['/login']);
   }

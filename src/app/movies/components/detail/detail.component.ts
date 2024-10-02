@@ -15,13 +15,16 @@ import { NavbarComponent } from '../navbar/navbar.component';
 })
 export class DetailComponent {
 
-  movie!: any;
+  movie!: any; //No se recomienda usar any
 
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService
   ){}
 
+  /**
+   * Maneja el evento de busqueda de peliculas por id utilizando el servicio MovieService.
+   */
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.movieService.getMovieById(id!).subscribe(movie => {

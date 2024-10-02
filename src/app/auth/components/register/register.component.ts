@@ -13,11 +13,22 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegisterComponent {
 
+  /**
+   * Dirección de correo electrónico ingresada por el usuario.
+   */
   email: string = "";
+
+  /**
+   * Contraseña ingresada por el usuario.
+   */
   password: string = "";
 
   constructor(private authService: AuthService, private router: Router) {}
 
+  /**
+   * Maneja el evento de registro de usuario utilizando el servicio AuthService.
+   * Muestra un mensaje por consola si el registro es exitoso.
+   */
   register() {
     this.authService.register(this.email, this.password)
       .then(result => {
@@ -28,6 +39,9 @@ export class RegisterComponent {
       });
   }
 
+  /**
+   * Redirige a la pagina del login.
+   */
   returnLogin(){
     this.router.navigate(['/login']);
   }
